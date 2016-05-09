@@ -50,11 +50,11 @@ angular.module('angular.directives-round-progress', []).directive('angRoundProgr
             ctx.stroke();
 
             // The inner circle
-            ctx.beginPath();
-            ctx.arc(x, y, parseInt(innerCircleRadius), 0, Math.PI * 2, false);
-            ctx.lineWidth = parseInt(innerCircleWidth);
-            ctx.strokeStyle = innerCircleColor;
-            ctx.stroke();
+            // ctx.beginPath();
+            // ctx.arc(x, y, parseInt(innerCircleRadius), 0, Math.PI * 2, false);
+            // ctx.lineWidth = parseInt(innerCircleWidth);
+            // ctx.strokeStyle = innerCircleColor;
+            // ctx.stroke();
 
             // The inner number
             ctx.font = labelFont;
