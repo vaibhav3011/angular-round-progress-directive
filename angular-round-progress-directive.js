@@ -4,7 +4,7 @@
  * Copyright 2013 Stephane Begaudeau
  * Released under the MIT license
  */
-angular.module('angular.directives-round-progress', []).directive('angRoundProgress', [function () {
+angular.module('angular.directives-round-progress', []).directive('angRoundProgress', [function (scope) {
   var compilationFunction = function (templateElement, templateAttributes, transclude) {
     if (templateElement.length === 1) {
       var node = templateElement[0];
@@ -23,7 +23,7 @@ angular.module('angular.directives-round-progress', []).directive('angRoundProgr
       var innerCircleWidth = node.getAttribute('data-round-progress-inner-circle-width') || '5';
 
       var outerCircleBackgroundColor = node.getAttribute('data-round-progress-outer-circle-background-color') || '#505769';
-      var outerCircleForegroundColor = node.getAttribute('data-round-progress-outer-circle-foreground-color') || '#12eeb9';
+      var outerCircleForegroundColor = node.getAttribute('data-round-progress-outer-circle-foreground-color') || '#ff8b00';
       var innerCircleColor = node.getAttribute('data-round-progress-inner-circle-color') || '#505769';
       var labelColor = node.getAttribute('data-round-progress-label-color') || '#12eeb9';
 
@@ -70,7 +70,7 @@ angular.module('angular.directives-round-progress', []).directive('angRoundProgr
             ctx.beginPath();
             ctx.arc(x, y, parseInt(outerCircleRadius), startAngle, endAngle, anticlockwise);
             ctx.lineWidth = parseInt(outerCircleWidth);
-            ctx.strokeStyle = outerCircleForegroundColor;
+            ctx.strokeStyle = scope.$parent.radialProgress.progress_color;
             ctx.stroke();
           }, true);
         },
